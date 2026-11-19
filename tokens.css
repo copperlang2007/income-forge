@@ -1,0 +1,42 @@
+/* IncomeForge Design Tokens
+ * Cream paper · Forest hero · Gold CTA
+ */
+
+:root {
+  /* Colors */
+  --color-forest: #1B3A2F;
+  --color-gold: #C4A35A;
+  --color-cream: #F8F4EC;
+  --color-ink: #1A1A1A;
+  --color-muted: #6B7280;
+  --color-border: #E5DFD0;
+
+  /* Type */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Spacing & Radius */
+  --radius-card: 22px;
+  --radius-btn: 9999px;
+  --shadow-soft: 0 4px 24px rgba(27, 58, 47, 0.08);
+}
+
+/* Component Classes */
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-ink);
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+}
+.btn-secondary {
+  border: 1.5px solid var(--color-forest);
+  color: var(--color-forest);
+  border-radius: var(--radius-btn);
+}
+.card {
+  background: white;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+}
