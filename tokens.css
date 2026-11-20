@@ -1,42 +1,108 @@
-/* IncomeForge Design Tokens
- * Cream paper · Forest hero · Gold CTA
+/* IncomeForge Design Tokens v1.1
+ * Cream paper · Forest hero · Gold CTA · Warm authority
  */
 
 :root {
-  /* Colors */
+  /* Colors — AA+ contrast */
   --color-forest: #1B3A2F;
   --color-gold: #C4A35A;
+  --color-gold-hover: #B08D3E;
   --color-cream: #F8F4EC;
   --color-ink: #1A1A1A;
-  --color-muted: #6B7280;
+  --color-muted: #4B5563;
   --color-border: #E5DFD0;
+  --color-white: #FFFFFF;
 
-  /* Type */
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  /* Type scale */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
 
-  /* Spacing & Radius */
+  /* Spacing rhythm (8px base) */
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Components */
   --radius-card: 22px;
   --radius-btn: 9999px;
   --shadow-soft: 0 4px 24px rgba(27, 58, 47, 0.08);
+  --shadow-lift: 0 12px 40px rgba(27, 58, 47, 0.12);
 }
 
-/* Component Classes */
+body {
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .serif {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
 .btn-primary {
   background: var(--color-gold);
   color: var(--color-ink);
   border-radius: var(--radius-btn);
   font-weight: 600;
-  padding: 0.75rem 2rem;
+  padding: 0.875rem 2rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--color-gold-hover);
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
 }
 .btn-secondary {
   border: 1.5px solid var(--color-forest);
   color: var(--color-forest);
   border-radius: var(--radius-btn);
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--color-forest);
+  color: var(--color-white);
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }
 .card {
-  background: white;
+  background: var(--color-white);
   border-radius: var(--radius-card);
   border: 1px solid var(--color-border);
   padding: 2rem;
+  box-shadow: var(--shadow-soft);
+}
+.card:hover {
+  box-shadow: var(--shadow-lift);
+}
+
+/* Focus styles for a11y */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }
