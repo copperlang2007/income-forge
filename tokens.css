@@ -1,19 +1,22 @@
 /* IncomeForge Design Tokens v1.1
  * Cream paper · Forest hero · Gold CTA · Warm authority
+ * Production-ready, AA+ contrast, 8px rhythm
  */
 
 :root {
-  /* Colors — AA+ contrast */
+  /* Colors — AA+ */
   --color-forest: #1B3A2F;
+  --color-forest-dark: #122820;
   --color-gold: #C4A35A;
-  --color-gold-hover: #B08D3E;
+  --color-gold-hover: #A8883F;
   --color-cream: #F8F4EC;
   --color-ink: #1A1A1A;
   --color-muted: #4B5563;
   --color-border: #E5DFD0;
   --color-white: #FFFFFF;
+  --color-success: #166534;
 
-  /* Type scale */
+  /* Type */
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --text-xs: 0.75rem;
@@ -27,7 +30,7 @@
   --text-5xl: 3rem;
   --text-6xl: 3.75rem;
 
-  /* Spacing rhythm (8px base) */
+  /* Spacing */
   --space-2: 0.5rem;
   --space-4: 1rem;
   --space-6: 1.5rem;
@@ -49,6 +52,7 @@ body {
   background: var(--color-cream);
   color: var(--color-ink);
   line-height: 1.6;
+  margin: 0;
 }
 
 h1, h2, h3, .serif {
@@ -56,6 +60,7 @@ h1, h2, h3, .serif {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
+  color: var(--color-forest);
 }
 
 .btn-primary {
@@ -67,6 +72,9 @@ h1, h2, h3, .serif {
   transition: background 0.2s ease, transform 0.1s ease;
   display: inline-block;
   text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 .btn-primary:hover,
 .btn-primary:focus-visible {
@@ -82,6 +90,8 @@ h1, h2, h3, .serif {
   padding: 0.875rem 2rem;
   background: transparent;
   transition: background 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
 }
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
@@ -96,13 +106,26 @@ h1, h2, h3, .serif {
   border: 1px solid var(--color-border);
   padding: 2rem;
   box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.2s ease;
 }
 .card:hover {
   box-shadow: var(--shadow-lift);
 }
 
-/* Focus styles for a11y */
 :focus-visible {
   outline: 2px solid var(--color-gold);
   outline-offset: 2px;
+}
+
+/* Utility for sticky mobile CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: none;
+}
+@media (max-width: 767px) {
+  .sticky-cta { display: block; }
 }
